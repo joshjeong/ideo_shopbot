@@ -1,0 +1,257 @@
+<div class="container-fluid">
+    <div class="row well" id="main-container" style="display:none;">
+        <div id="sock-image" style="background-image: url(https://tcprd-tdcdn.netdna-ssl.com/salmon-carded-cotton-buena-park-polka-dot-sock-239617-505-800-0.jpg)">
+            <img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=16295283" alt="" style="visibility:hidden;">
+        </div>
+        <button class="btn btn-primary start" type="button" name="button" id="start-btn">START</button>
+        <div class="row" style="margin-top: 28px;">
+            <div class="col-md-12" style="text-align:center;">
+                <div class="btn-group" role="group" aria-label="..." style="width:100%;">
+                  <button type="button" class="btn btn-default" id="no-btn" style="width:50%;">No</button>
+                  <button type="button" class="btn btn-default" id="yes-btn" style="width:50%;">Yes</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-8" id="affdex_elements" style="width:680px;height:480px; display:none;"></div>
+        <div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    // SDK Needs to create video and canvas nodes in the DOM in order to function
+    // Here we are adding those nodes a predefined div.
+    var divRoot = $("#affdex_elements")[0];
+    var width = 640;
+    var height = 480;
+    var faceMode = affdex.FaceDetectorMode.LARGE_FACES;
+    //Construct a CameraDetector and specify the image width / height and face detector mode.
+    var detector = new affdex.CameraDetector(divRoot, width, height, faceMode);
+    var isRecording = false;
+    var emotionModel = [];
+    var socksArray = [{
+            id: 1,
+            image: 'https://d1m0snbrxrb9db.cloudfront.net/uploads%2F20170630T1712Z_460f0d2a764b901e3d8a777870c79e80%2F07socks.jpg'
+        }, {
+            id: 2,
+            image: 'https://d1m0snbrxrb9db.cloudfront.net/uploads%2F20170630T1714Z_1f54355f53194a9f095eec6fd1b45151%2F64socks.jpeg'
+        },
+        {
+            id: 3,
+            image: 'https://d1m0snbrxrb9db.cloudfront.net/uploads%2F20170630T1717Z_9626f325ceeb1869d9dbb6f406155d45%2F52socks.jpg'
+        },
+        {
+            id: 4,
+            image: 'https://d1m0snbrxrb9db.cloudfront.net/uploads%2F20170630T1718Z_b61e65809104da4de3e3dffe472e8d7b%2F53socks.jpg'
+        },
+        {
+            id: 5,
+            image: 'https://d1m0snbrxrb9db.cloudfront.net/uploads%2F20170630T1731Z_7e126b04025d18d5f476f278d2786798%2F66socks.jpeg'
+        },
+        {
+            id: 6,
+            image: 'https://d1m0snbrxrb9db.cloudfront.net/uploads%2F20170630T1727Z_992cadd0668ab9108fa901b634e6ddfa%2Fshopping-1.jpg'
+        }
+    ];
+    var currentSockIndex = 0;
+
+    //Enable detection of all Expressions, Emotions and Emojis classifiers.
+    detector.detectAllEmotions();
+    detector.detectAllExpressions();
+    detector.detectAllEmojis();
+    detector.detectAllAppearance();
+
+    //Add a callback to notify when the detector is initialized and ready for runing.
+    detector.addEventListener("onInitializeSuccess", function() {
+        log('#logs', "The detector reports initialized");
+        //Display canvas instead of video feed because we want to draw the feature points on it
+        $("#face_video_canvas").css("display", "block");
+        $("#face_video").css("display", "none");
+    });
+
+    function log(node_name, msg) {
+        $(node_name).append("<span>" + msg + "</span><br />")
+    }
+
+    //function executes when Start button is pushed.
+    function startCamera() {
+        if (detector && !detector.isRunning) {
+            $("#logs").html("");
+            detector.start();
+        }
+        log('#logs', "Clicked the start button");
+    }
+
+    //function executes when the Stop button is pushed.
+    function onStop() {
+        log('#logs', "Clicked the stop button");
+        if (detector && detector.isRunning) {
+            detector.removeEventListener();
+            detector.stop();
+        }
+    };
+
+    //function executes when the Reset button is pushed.
+    function onReset() {
+        log('#logs', "Clicked the reset button");
+        if (detector && detector.isRunning) {
+            detector.reset();
+
+            $('#results').html("");
+        }
+    };
+
+    //Add a callback to notify when camera access is allowed
+    detector.addEventListener("onWebcamConnectSuccess", function() {
+        log('#logs', "Webcam access allowed");
+    });
+
+    //Add a callback to notify when camera access is denied
+    detector.addEventListener("onWebcamConnectFailure", function() {
+        log('#logs', "webcam denied");
+        console.log("Webcam access denied");
+    });
+
+    //Add a callback to notify when detector is stopped
+    detector.addEventListener("onStopSuccess", function() {
+        log('#logs', "The detector reports stopped");
+        $("#results").html("");
+    });
+
+    //Add a callback to receive the results from processing an image.
+    //The faces object contains the list of the faces detected in an image.
+    //Faces object contains probabilities for all the different expressions, emotions and appearance metrics
+    var tempValence = [];
+    var tempEngagement = [];
+
+    detector.addEventListener("onImageResultsSuccess", function(faces, image, timestamp) {
+        $('#results').html("");
+        if (faces.length > 0) {
+            // log('#results', "Appearance: " + JSON.stringify(faces[0].appearance));
+            // log('#results', "Emotions: " + JSON.stringify(faces[0].emotions, function(key, val) {
+            //     return val.toFixed ? Number(val.toFixed(0)) : val;
+            // }));
+            // log('#results', "Expressions: " + JSON.stringify(faces[0].expressions, function(key, val) {
+            //     return val.toFixed ? Number(val.toFixed(0)) : val;
+            // }));
+            // log('#results', "Emoji: " + faces[0].emojis.dominantEmoji);
+            drawFeaturePoints(image, faces[0].featurePoints);
+            var valence = faces[0].emotions.valence;
+            var engagement = faces[0].emotions.engagement;
+            if (isRecording) {
+                tempValence.push(valence);
+                tempEngagement.push(engagement);
+            }
+        }
+    });
+
+    //Draw the detected facial feature points on the image
+    function drawFeaturePoints(img, featurePoints) {
+        var contxt = $('#face_video_canvas')[0].getContext('2d');
+
+        var hRatio = contxt.canvas.width / img.width;
+        var vRatio = contxt.canvas.height / img.height;
+        var ratio = Math.min(hRatio, vRatio);
+
+        contxt.strokeStyle = "#FFFFFF";
+        for (var id in featurePoints) {
+            contxt.beginPath();
+            contxt.arc(featurePoints[id].x,
+                featurePoints[id].y, 2, 0, 2 * Math.PI);
+            contxt.stroke();
+
+        }
+    }
+
+    function cycleSocks() {
+        currentSockIndex++;
+        $('#sock-image').css('background-image', 'url(' + socksArray[currentSockIndex].image + ')');
+    }
+
+
+    function sendEmotionData() {
+        $.ajax({
+            url: '/addEmotionData',
+            data: JSON.stringify(emotionModel),
+            contentType: 'application/json',
+            type: 'POST',
+            dataType: 'json',
+            success: function(response) {
+                console.log('yee');
+            },
+            error: function(response) {
+                console.log("Error fetching facebook likes: " + response.responseText);
+            }
+        });
+    }
+
+    function showDashboard() {
+        isRecording = false;
+        $('#sock-image').hide();
+        $('#yes-btn').hide();
+        $('#no-btn').hide();
+        $('#affdex_elements').show();
+        $('#analysis-table').show();
+    }
+
+    function recordEmotionData(isSelected) {
+        var avgEngagement = _.reduce(tempEngagement, function(memo, num){ return memo + num; }, 0)/tempEngagement.length;
+        var avgValence = _.reduce(tempValence, function(memo, num){ return memo + num; }, 0)/tempValence.length
+
+        emotionModel.push({
+            sock: socksArray[currentSockIndex],
+            avg_engagement: avgEngagement,
+            avg_valence: avgValence,
+            is_selected: isSelected
+        });
+
+        tempValence = [];
+        tempEngagement = [];
+    }
+
+
+    $(document).ready(function() {
+        startCamera();
+        var startBtn = $('#start-btn');
+        startBtn.on('click.startButton',function() {
+            isRecording = true;
+            var sockImg = $('#sock-image');
+            sockImg.css('background-image', 'url(' + socksArray[0].image + ')');
+            sockImg.show();
+            $('#yes-btn').show();
+            $('#no-btn').show();
+            startBtn.hide();
+        })
+
+        $('#yes-btn').on('click',function() {
+            recordEmotionData(1);
+
+            if (currentSockIndex >= socksArray.length - 1) {
+                sendEmotionData();
+                showDashboard();
+                currentSockIndex = 0;
+                emotionModel = [];
+                return;
+            }
+
+            console.log(emotionModel);
+            cycleSocks();
+        });
+
+        $('#no-btn').on('click',function() {
+            recordEmotionData(0);
+
+            if (currentSockIndex >= socksArray.length - 1) {
+                sendEmotionData();
+                showDashboard();
+                currentSockIndex = 0;
+                emotionModel = [];
+                return;
+            }
+
+            console.log(emotionModel);
+            cycleSocks();
+        });
+    });
+</script>

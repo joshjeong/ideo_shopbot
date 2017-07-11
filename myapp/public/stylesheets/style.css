@@ -1,0 +1,98 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #ebebeb;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#sock-image {
+    width: 300px;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#start-btn {
+    display: block;
+    margin: 20px auto;
+    margin-top: 43px;
+    padding: 16px 200px;
+}
+
+#start-btn:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#main-container {
+    width: 700px;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: white;
+    margin-top: 70px;
+}
+
+.logo {
+    width: 50px;
+}
+
+
+.navbar {
+    height: 77px;
+}
+
+
+.logo-title {
+    display: inline;
+    line-height: 77px;
+    color: darkgray;
+    font-family: 'Chewy', cursive;
+}
+
+#login {
+    width: 400px;
+    border-radius: 8px;
+    margin-top: 200px;
+    cursor: pointer;
+}
+
+#login:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#container {
+    text-align: center;
+}
+
+#logout, #analysis-table, #sock-image, #yes-btn, #no-btn {
+    display: none;
+}
+
+#logout {
+    position: absolute;
+    top: 7px;
+    right: 20px;
+    color: darkgray;
+    cursor: pointer;
+}
+
+#yes-btn:hover {
+    background-color: #5cb85c;
+    color: white;
+}
+
+#no-btn:hover {
+    background-color: #d9534f;
+    color: white;
+}
+
+#login:focus, #start-btn:focus, #no-btn:focus, #yes-btn:focus {
+  outline: none;
+}

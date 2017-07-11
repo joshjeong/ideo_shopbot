@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= 'Tender'
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Chewy')
+
+    script(src='https://cdn.jsdelivr.net/underscorejs/1.8.3/underscore-min.js')
+    script(src='https://download.affectiva.com/js/3.2/affdex.js')
+  body
+  .navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(href="#")
+            img.logo(src="https://www.shareicon.net/download/2017/01/06/869211_new_512x512.png")
+          h1.logo-title Tender
+          h3#logout Logout
+  block content

@@ -1,0 +1,651 @@
+{
+  "interpretations": [
+    {
+      "trait": "Jungian_Personality",
+      "value": "INTJ"
+    },
+    {
+      "trait": "Leadership",
+      "value": 0.4928609360829792
+    }
+  ],
+  "predictions": [
+    {
+      "trait": "Concentration_IT",
+      "value": 0.07381475630754444
+    },
+    {
+      "trait": "Concentration_Journalism",
+      "value": 0.09096136302690054
+    },
+    {
+      "trait": "Concentration_Education",
+      "value": 0.047132404923444796
+    },
+    {
+      "trait": "BIG5_Neuroticism",
+      "value": 0.3450582874019862
+    },
+    {
+      "trait": "Relationship_None",
+      "value": 0.5212928883481025
+    },
+    {
+      "trait": "Age",
+      "value": 27.158418646243188
+    },
+    {
+      "trait": "BIG5_Conscientiousness",
+      "value": 0.4609847790037676
+    },
+    {
+      "trait": "Female",
+      "value": 0.5217803189126505
+    },
+    {
+      "trait": "Satisfaction_Life",
+      "value": 0.5358637967382992
+    },
+    {
+      "trait": "Politics_Libertanian",
+      "value": 0.09363912889180605
+    },
+    {
+      "trait": "Concentration_Business",
+      "value": 0.09667897269706102
+    },
+    {
+      "trait": "Religion_Catholic",
+      "value": 0.20795813565503757
+    },
+    {
+      "trait": "Religion_Jewish",
+      "value": 0.01961622802112677
+    },
+    {
+      "trait": "BIG5_Extraversion",
+      "value": 0.3440069742291878
+    },
+    {
+      "trait": "Religion_Lutheran",
+      "value": 0.025552014437436026
+    },
+    {
+      "trait": "Concentration_Law",
+      "value": 0.09018856136436387
+    },
+    {
+      "trait": "Concentration_Art",
+      "value": 0.09234201444461568
+    },
+    {
+      "trait": "Politics_Liberal",
+      "value": 0.4439805647102986
+    },
+    {
+      "trait": "Concentration_Nursing",
+      "value": 0.08642322897799873
+    },
+    {
+      "trait": "Religion_Mormon",
+      "value": 0.027473489607072382
+    },
+    {
+      "trait": "BIG5_Openness",
+      "value": 0.5270940854755425
+    },
+    {
+      "trait": "Relationship_Yes",
+      "value": 0.31375667066593393
+    },
+    {
+      "trait": "Intelligence",
+      "value": 0.5755611592904658
+    },
+    {
+      "trait": "Politics_Conservative",
+      "value": 0.307235748835404
+    },
+    {
+      "trait": "Relationship_Married",
+      "value": 0.16495044098596365
+    },
+    {
+      "trait": "Concentration_Biology",
+      "value": 0.09371158676866329
+    },
+    {
+      "trait": "Religion_None",
+      "value": 0.3760337836481239
+    },
+    {
+      "trait": "Concentration_Psychology",
+      "value": 0.1130394785249066
+    },
+    {
+      "trait": "Politics_Uninvolved",
+      "value": 0.15514455756249138
+    },
+    {
+      "trait": "BIG5_Agreeableness",
+      "value": 0.4543147502319198
+    },
+    {
+      "trait": "Concentration_Finance",
+      "value": 0.05561399217340216
+    },
+    {
+      "trait": "Concentration_Engineering",
+      "value": 0.09563022489040646
+    },
+    {
+      "trait": "Religion_Christian_Other",
+      "value": 0.3433663486312034
+    },
+    {
+      "trait": "Concentration_History",
+      "value": 0.06446341590069239
+    }
+  ],
+  "contributors": [
+    {
+      "trait": "Concentration_IT",
+      "positive": [
+        "81221197163",
+        "10643211755",
+        "8304333127"
+      ],
+      "negative": [
+        "83711079303",
+        "15087023444",
+        "103770256328342"
+      ]
+    },
+    {
+      "trait": "Concentration_Journalism",
+      "positive": [
+        "83711079303",
+        "10643211755",
+        "103770256328342"
+      ],
+      "negative": [
+        "81221197163",
+        "15087023444",
+        "8304333127"
+      ]
+    },
+    {
+      "trait": "Concentration_Education",
+      "positive": [
+        "131305029855",
+        "10643211755",
+        "14791636650"
+      ],
+      "negative": [
+        "81221197163",
+        "83711079303",
+        "8304333127"
+      ]
+    },
+    {
+      "trait": "BIG5_Neuroticism",
+      "positive": [
+        "83711079303",
+        "30808761323",
+        "131305029855"
+      ],
+      "negative": [
+        "10643211755",
+        "81221197163",
+        "15087023444"
+      ]
+    },
+    {
+      "trait": "Age",
+      "positive": [
+        "15087023444",
+        "53783138931"
+      ],
+      "negative": [
+        "10643211755",
+        "83711079303",
+        "81221197163"
+      ]
+    },
+    {
+      "trait": "Relationship_None",
+      "positive": [
+        "83711079303",
+        "81221197163",
+        "53783138931"
+      ],
+      "negative": [
+        "10643211755",
+        "112594555423013",
+        "6191007822"
+      ]
+    },
+    {
+      "trait": "BIG5_Conscientiousness",
+      "positive": [
+        "103770256328342",
+        "15087023444",
+        "81221197163"
+      ],
+      "negative": [
+        "83711079303",
+        "10643211755",
+        "53783138931"
+      ]
+    },
+    {
+      "trait": "Female",
+      "positive": [
+        "83711079303",
+        "10643211755",
+        "107787352370"
+      ],
+      "negative": [
+        "15087023444",
+        "8304333127",
+        "81221197163"
+      ]
+    },
+    {
+      "trait": "Satisfaction_Life",
+      "positive": [
+        "83711079303",
+        "10643211755",
+        "81221197163"
+      ],
+      "negative": [
+        "15087023444",
+        "30808761323",
+        "131305029855"
+      ]
+    },
+    {
+      "trait": "Politics_Libertanian",
+      "positive": [
+        "10643211755",
+        "8304333127",
+        "103770256328342"
+      ],
+      "negative": [
+        "83711079303",
+        "15087023444",
+        "81221197163"
+      ]
+    },
+    {
+      "trait": "Concentration_Business",
+      "positive": [
+        "83711079303",
+        "131305029855",
+        "8304333127"
+      ],
+      "negative": [
+        "10643211755",
+        "81221197163",
+        "103770256328342"
+      ]
+    },
+    {
+      "trait": "Religion_Catholic",
+      "positive": [
+        "81221197163",
+        "103770256328342",
+        "15087023444"
+      ],
+      "negative": [
+        "83711079303",
+        "10643211755",
+        "8719774366"
+      ]
+    },
+    {
+      "trait": "Religion_Jewish",
+      "positive": [
+        "10643211755",
+        "103770256328342",
+        "81221197163"
+      ],
+      "negative": [
+        "83711079303",
+        "48654660602",
+        "14791636650"
+      ]
+    },
+    {
+      "trait": "BIG5_Extraversion",
+      "positive": [
+        "81221197163",
+        "15087023444",
+        "53783138931"
+      ],
+      "negative": [
+        "83711079303",
+        "10643211755",
+        "17893008278"
+      ]
+    },
+    {
+      "trait": "Concentration_Law",
+      "positive": [
+        "83711079303",
+        "131305029855",
+        "8304333127"
+      ],
+      "negative": [
+        "10643211755",
+        "15087023444",
+        "103770256328342"
+      ]
+    },
+    {
+      "trait": "Religion_Lutheran",
+      "positive": [
+        "83711079303",
+        "6191007822"
+      ],
+      "negative": [
+        "10643211755",
+        "103770256328342",
+        "81221197163"
+      ]
+    },
+    {
+      "trait": "Concentration_Art",
+      "positive": [
+        "15087023444",
+        "30808761323",
+        "112594555423013"
+      ],
+      "negative": [
+        "83711079303",
+        "81221197163",
+        "10643211755"
+      ]
+    },
+    {
+      "trait": "Politics_Liberal",
+      "positive": [
+        "10643211755",
+        "81221197163",
+        "103770256328342"
+      ],
+      "negative": [
+        "83711079303",
+        "8304333127",
+        "53783138931"
+      ]
+    },
+    {
+      "trait": "Concentration_Nursing",
+      "positive": [
+        "83711079303",
+        "81221197163",
+        "107787352370"
+      ],
+      "negative": [
+        "10643211755",
+        "15087023444",
+        "8304333127"
+      ]
+    },
+    {
+      "trait": "Religion_Mormon",
+      "positive": [
+        "83711079303",
+        "8304333127",
+        "48654660602"
+      ],
+      "negative": [
+        "10643211755",
+        "103770256328342",
+        "81221197163"
+      ]
+    },
+    {
+      "trait": "BIG5_Openness",
+      "positive": [
+        "10643211755",
+        "103770256328342",
+        "83711079303"
+      ],
+      "negative": [
+        "15087023444",
+        "131305029855",
+        "112594555423013"
+      ]
+    },
+    {
+      "trait": "Intelligence",
+      "positive": [
+        "10643211755",
+        "81221197163",
+        "83711079303"
+      ],
+      "negative": [
+        "131305029855",
+        "30808761323",
+        "107787352370"
+      ]
+    },
+    {
+      "trait": "Relationship_Yes",
+      "positive": [
+        "83711079303",
+        "103770256328342",
+        "131305029855"
+      ],
+      "negative": [
+        "10643211755",
+        "81221197163",
+        "15087023444"
+      ]
+    },
+    {
+      "trait": "Politics_Conservative",
+      "positive": [
+        "83711079303",
+        "131305029855",
+        "6191007822"
+      ],
+      "negative": [
+        "10643211755",
+        "17893008278",
+        "103770256328342"
+      ]
+    },
+    {
+      "trait": "Relationship_Married",
+      "positive": [
+        "10643211755",
+        "17893008278",
+        "8304333127"
+      ],
+      "negative": [
+        "83711079303",
+        "103770256328342",
+        "53783138931"
+      ]
+    },
+    {
+      "trait": "Concentration_Biology",
+      "positive": [
+        "83711079303",
+        "10643211755",
+        "81221197163"
+      ],
+      "negative": [
+        "53783138931",
+        "131305029855",
+        "14791636650"
+      ]
+    },
+    {
+      "trait": "Religion_None",
+      "positive": [
+        "10643211755",
+        "103770256328342",
+        "17893008278"
+      ],
+      "negative": [
+        "83711079303",
+        "81221197163",
+        "15087023444"
+      ]
+    },
+    {
+      "trait": "Concentration_Psychology",
+      "positive": [
+        "83711079303",
+        "103770256328342",
+        "107787352370"
+      ],
+      "negative": [
+        "15087023444",
+        "10643211755",
+        "81221197163"
+      ]
+    },
+    {
+      "trait": "Politics_Uninvolved",
+      "positive": [
+        "83711079303",
+        "15087023444",
+        "30808761323"
+      ],
+      "negative": [
+        "10643211755",
+        "103770256328342",
+        "8304333127"
+      ]
+    },
+    {
+      "trait": "BIG5_Agreeableness",
+      "positive": [
+        "83711079303",
+        "10643211755",
+        "107787352370"
+      ],
+      "negative": [
+        "15087023444",
+        "8304333127",
+        "53783138931"
+      ]
+    },
+    {
+      "trait": "Concentration_Finance",
+      "positive": [
+        "81221197163",
+        "8304333127",
+        "53783138931"
+      ],
+      "negative": [
+        "83711079303",
+        "10643211755",
+        "103770256328342"
+      ]
+    },
+    {
+      "trait": "Concentration_Engineering",
+      "positive": [
+        "15087023444",
+        "81221197163",
+        "103770256328342"
+      ],
+      "negative": [
+        "83711079303",
+        "131305029855",
+        "30808761323"
+      ]
+    },
+    {
+      "trait": "Religion_Christian_Other",
+      "positive": [
+        "83711079303",
+        "15087023444",
+        "14791636650"
+      ],
+      "negative": [
+        "10643211755",
+        "81221197163",
+        "103770256328342"
+      ]
+    },
+    {
+      "trait": "Concentration_History",
+      "positive": [
+        "10643211755",
+        "81221197163",
+        "8304333127"
+      ],
+      "negative": [
+        "83711079303",
+        "131305029855",
+        "15087023444"
+      ]
+    }
+  ],
+  "input_used": 16,
+  "id": "10154835082787831",
+  "name": "Nancy Adriana Torres",
+  "quizResults": [
+    {
+      "sock": {
+        "id": 1,
+        "image": "https://d1m0snbrxrb9db.cloudfront.net/uploads%2F20170630T1712Z_460f0d2a764b901e3d8a777870c79e80%2F07socks.jpg"
+      },
+      "avg_engagement": 50.67934308153518,
+      "avg_valence": 1.8870033078054165,
+      "is_selected": 0
+    },
+    {
+      "sock": {
+        "id": 2,
+        "image": "https://d1m0snbrxrb9db.cloudfront.net/uploads%2F20170630T1714Z_1f54355f53194a9f095eec6fd1b45151%2F64socks.jpeg"
+      },
+      "avg_engagement": 43.49306865692139,
+      "avg_valence": 0.5464144290983677,
+      "is_selected": 1
+    },
+    {
+      "sock": {
+        "id": 3,
+        "image": "https://d1m0snbrxrb9db.cloudfront.net/uploads%2F20170630T1717Z_9626f325ceeb1869d9dbb6f406155d45%2F52socks.jpg"
+      },
+      "avg_engagement": 19.742899231794404,
+      "avg_valence": 0,
+      "is_selected": 0
+    },
+    {
+      "sock": {
+        "id": 4,
+        "image": "https://d1m0snbrxrb9db.cloudfront.net/uploads%2F20170630T1718Z_b61e65809104da4de3e3dffe472e8d7b%2F53socks.jpg"
+      },
+      "avg_engagement": 38.776619873046876,
+      "avg_valence": 0,
+      "is_selected": 0
+    },
+    {
+      "sock": {
+        "id": 5,
+        "image": "https://d1m0snbrxrb9db.cloudfront.net/uploads%2F20170630T1731Z_7e126b04025d18d5f476f278d2786798%2F66socks.jpeg"
+      },
+      "avg_engagement": 21.777937937665868,
+      "avg_valence": 0,
+      "is_selected": 1
+    },
+    {
+      "sock": {
+        "id": 6,
+        "image": "https://d1m0snbrxrb9db.cloudfront.net/uploads%2F20170630T1727Z_992cadd0668ab9108fa901b634e6ddfa%2Fshopping-1.jpg"
+      },
+      "avg_engagement": 42.91634838104248,
+      "avg_valence": 3.3825682830810546,
+      "is_selected": 1
+    }
+  ]
+}
